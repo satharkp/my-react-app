@@ -23,7 +23,7 @@ It includes essential task management features along with a dark/light mode togg
 
 ---
 LINK:
-git clone https://github.com/satharkp/my-react-app.git
+git clone https://satharkp.github.io/my-react-app/
 ## 📂 Project Structure
 
 ```bash
