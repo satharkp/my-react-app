@@ -3,6 +3,9 @@ body{
   text-align: center;
   background-color: hsl(71, 4%, 49%);
   font-size: 20px;
+  margin: 0;    
+  padding: 0;        
+
 }
 
 h1{
@@ -38,7 +41,6 @@ li {
   background-color: rgb(186, 169, 139);
   width: 80%;
   max-width: 600px;
-  margin: auto;
 
 }
 
@@ -89,9 +91,10 @@ li {
   li {
     flex-direction: column;
     align-items: center;
-    margin-left: 0px;
-    margin-right: 0px;
     width: 80%;
+  }
+  ul{
+    padding: 0%;
   }
   
   .moving-btn {
@@ -167,4 +170,11 @@ body.dark {
   margin-top: 20px;
   display: flex;
 
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
 }
