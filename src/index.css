@@ -36,9 +36,10 @@ li {
   border: 2px solid rgb(238, 238, 238);
   border-radius: 5px;
   background-color: rgb(186, 169, 139);
-  margin: 10px auto;
   width: 80%;
   max-width: 600px;
+  margin: auto;
+
 }
 
 .move-group {
@@ -73,7 +74,7 @@ li {
   background-color: hsl(0, 69%, 50%);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 400px) {
   h1 {
     font-size: 40px;
   }
@@ -87,7 +88,17 @@ li {
 
   li {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 80%;
+  }
+  
+  .moving-btn {
+    font-size: 13px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin: 0;
   }
 
   .move-group {
@@ -98,4 +109,62 @@ li {
     gap: 10px;
     flex-wrap: wrap;
   }
+}
+
+
+.to-do-list.dark .text-box,
+.to-do-list.dark button {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+.to-do-list.dark li {
+  background-color: #222;
+  border-color: #444;
+}
+
+
+.to-do-list.dark .moving-btn {
+  background-color: #555;
+  color: #eee;
+  border: none;
+}
+
+
+.to-do-list.dark .moving-btn:hover {
+  background-color: #777;
+}
+
+
+.to-do-list.dark .add-button {
+  background-color: hsl(120, 40%, 30%);
+  color: white;
+}
+
+.to-do-list.dark .add-button:hover {
+  background-color: hsl(120, 40%, 40%);
+}
+
+
+.to-do-list.dark .clear-button {
+  background-color: hsl(0, 69%, 30%);
+  color: white;
+}
+
+.to-do-list.dark .clear-button:hover {
+  background-color: hsl(0, 69%, 40%);
+}
+
+body.dark {
+  background-color: #121212;
+  color: #eee;
+}
+
+.dark-btn{
+  border: none;
+  font-size: 10px;
+  margin-top: 20px;
+  display: flex;
+
 }

@@ -3,13 +3,14 @@ import { useState, useEffect, useRef } from "react";
 function Todolist(){
     const [tasks, setTasks] = useState([]);
     const [newTask, setnewTask] = useState('');
+    const [darkMode, setDarkMode] = useState(false);
     const isFirstRender = useRef(true);
 
-    // Load tasks from localStorage on mount
+
   useEffect(() => {
     try {
       const savedTasks = localStorage.getItem("tasks");
-      console.log("Loading from storage:", savedTasks); // 🧪 debug log
+      console.log("Loading from storage:", savedTasks);
 
       if (savedTasks) {
         const parsedTasks = JSON.parse(savedTasks);
@@ -20,11 +21,10 @@ function Todolist(){
       }
      catch (err) {
       console.error("Error loading tasks from localStorage:", err);
-      localStorage.removeItem("tasks"); // remove corrupted data
+      localStorage.removeItem("tasks"); 
     }
   }, []);
 
-  //  Save tasks to localStorage when `tasks` changes
   useEffect(() => {
     if (isFirstRender.current) {
       isFirstRender.current = false;
@@ -36,6 +36,15 @@ function Todolist(){
     function handleInputChange(event){
         setnewTask(event.target.value);
     }
+
+    useEffect(() => {
+      if (darkMode) {
+        document.body.classList.add('dark');
+      } else {
+        document.body.classList.remove('dark');
+      }
+    }, [darkMode]);
+  
 
     function addTask(){
         if (newTask.trim() !== '') {
@@ -64,10 +73,18 @@ function Todolist(){
     }
     function clearAll() {
       setTasks([]);
-      localStorage.removeItem('tasks'); // ✅ 
+      localStorage.removeItem('tasks');
     }
+
+    function toggleDarkMode() {
+      setDarkMode(prev => !prev);
+    }
+
     return(
-      <div className="to-do-list">
+      <div className={`to-do-list ${darkMode ? 'dark' : ''}`}>
+        <button className="dark-btn" onClick={toggleDarkMode}>
+          {darkMode ? 'Light Mode' : 'Dark Mode'}
+        </button>
         <div>
           <h1> <u><b>TO-DO-LIST</b></u>
           <b></b></h1>
