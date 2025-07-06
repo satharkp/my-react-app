@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
   font-family: "Bebas Neue", sans-serif;
   text-align: center;
@@ -72,3 +73,14 @@ li {
 .clear-button:hover{
   background-color: hsl(0, 69%, 50%);
 }
+=======
+nav{
+  background-color: rgb(127, 127, 127);
+  font-size: 1.5rem;
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+>>>>>>> 65687eabfaaa5de9f6fd81f55c91afd652a43a6f
