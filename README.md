@@ -5,6 +5,7 @@ It includes essential task management features along with a dark/light mode togg
 
 ---
 
+
 ## 🚀 Features
 
 - ✅ Add new tasks
@@ -14,15 +15,6 @@ It includes essential task management features along with a dark/light mode togg
 - 📱 Fully responsive design for mobile and desktop
 
 ---
-
-## 📸 Screenshots
-
-> *(Add screenshots here if you have them)*  
-> Example:  
-> ![screenshot](./screenshots/home-light.png)
-
----
-
 ## 🛠️ Tech Stack
 
 - React.js (Vite)
@@ -43,3 +35,5 @@ my-react-app/
 │   └── main.jsx
 ├── vite.config.js
 └── README.md
+
+git clone https://github.com/satharkp/my-react-app.git
