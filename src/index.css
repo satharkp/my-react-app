@@ -77,14 +77,16 @@ li {
 }
 
 @media (max-width: 400px) {
+
   h1 {
     font-size: 40px;
   }
 
+
   .text-box,
   .add-button,
   .clear-button {
-    width: 100%;
+    width: 90%;
     margin: 5px 0;
   }
 

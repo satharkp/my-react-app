@@ -14,7 +14,18 @@ function Todolist(){
 
       if (savedTasks) {
         const parsedTasks = JSON.parse(savedTasks);
-        setTasks(parsedTasks);
+
+        const formattedTasks = parsedTasks.map(task => {
+          if (typeof task === 'string') {
+            return { text: task, completed: false };
+          } else {
+            return {
+              text: task.text || '',
+              completed: task.completed || false
+            };
+          }
+        });
+        setTasks(formattedTasks);
        } else {
           throw new Error("Data is not an array");
         }
@@ -48,7 +59,7 @@ function Todolist(){
 
     function addTask(){
         if (newTask.trim() !== '') {
-            setTasks(t=>[...t, newTask]);
+            setTasks(t => [...t, { text: newTask, completed: false }]);
             setnewTask('');
         }
     }
@@ -78,6 +89,12 @@ function Todolist(){
 
     function toggleDarkMode() {
       setDarkMode(prev => !prev);
+    }
+
+    function toggleTaskCompletion(index) {
+      const updatedTasks = [...tasks];
+      updatedTasks[index].completed = !updatedTasks[index].completed;
+      setTasks(updatedTasks);
     }
 
     return(
@@ -110,7 +127,14 @@ function Todolist(){
           <ul>
             {tasks.map((task, index) => (
               <li key={index}>
-                {task}
+                <input
+                  type="checkbox"
+                  checked={task.completed}
+                  onChange={() => toggleTaskCompletion(index)}
+                />
+                <span style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+                  {task.text}
+                </span>
                 <span className="move-group">
                   <button className="moving-btn" onClick={() => deleteTask(index)}>DELETE</button>
                   <button className="moving-btn" onClick={() => moveTaskUp(index)}>⬆️</button>
