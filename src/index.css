@@ -13,7 +13,6 @@ h1{
     color: rgb(255, 255, 255);   
 }
 
-
 button{
   font-size: 20px;
   padding: 5px 10px ;
@@ -44,7 +43,6 @@ li {
   margin-bottom: 5px;
 
 }
-
 .move-group {
   display: flex;
   margin-left: auto;
@@ -183,7 +181,6 @@ body.dark {
 }
 
 .dark-btn{
-  border: none;
   font-size: 10px;
   margin-top: 20px;
   display: flex;
